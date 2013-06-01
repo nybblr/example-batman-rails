@@ -51,6 +51,7 @@ gem 'haml-rails', :group => :development
 # Prettiness
 gem 'normalize-rails'
 gem 'zurb-foundation'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

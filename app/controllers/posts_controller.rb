@@ -5,11 +5,20 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   # GET /posts/new
@@ -69,6 +78,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:body, :tags, :published, :published_on)
+      params.require(:post).permit(:title, :body, :tags, :published, :published_on)
     end
 end

@@ -1,18 +1,19 @@
-%p#notice= notice
+%p
+  %b Title:
+  %em{data: {bind: 'post.title'}}
 
 %p
   %b Body:
-  = @post.body
+  %em{data: {bind: 'post.body'}}
 %p
   %b Tags:
-  = @post.tags
+  %em{data: {bind: 'post.tags'}}
 %p
   %b Published:
-  = @post.published
+  %em{data: {bind: 'post.published'}}
 %p
   %b Published on:
-  = @post.published_on
+  %em{data: {bind: 'post.publishedOn'}}
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+%a{data: {route: 'routes.posts[post]'}} Edit
+%a{data: {route: 'routes.posts'}} Back

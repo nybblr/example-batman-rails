@@ -1,8 +1,6 @@
 / Nav Sidebar
 / This is source ordered to be pulled to the left on larger screens
 .large-3.pull-9.columns
-  %div{:data => {"yield" => "sidebar"}}
-
   %ul.side-nav
     %li
       %a{:href => "#"} Section 1
@@ -16,5 +14,5 @@
       %a{:href => "#"} Section 5
     %li
       %a{:href => "#"} Section 6
-  %p
-    %img{:src => "http://placehold.it/320x240&text=Ad"}/
+
+  %div{:data => {"yield" => "sidebar"}}

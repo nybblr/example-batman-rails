@@ -20,7 +20,15 @@
 #= require ./lib/batman.jquery
 #= require ./lib/batman.rails
 #
+#= require ./batman/app
+#
 #= require_tree ./batman/models
 #= require_tree ./batman/controllers
 #= require_tree ./batman/helpers
 #= require_tree ./batman/views
+#
+#= require_self
+
+# Run the Batman app
+$ ->
+  Awesome.run()
