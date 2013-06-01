@@ -48,6 +48,10 @@ gem 'foreman' # daemon management
 gem 'haml'
 gem 'haml-rails', :group => :development
 
+# Prettiness
+gem 'normalize-rails'
+gem 'zurb-foundation'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

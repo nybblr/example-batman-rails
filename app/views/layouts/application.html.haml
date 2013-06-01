@@ -1,0 +1,17 @@
+!!! 5
+%html{ html_attrs }
+  %head
+    %title Awesome
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width" }
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    -# = javascript_include_tag 'faye'
+    -# %meta{ :name => 'faye-url', :content => '/faye' }
+    = csrf_meta_tags
+
+  %body.app
+    = render :partial => 'layouts/sidebar'
+    %article
+      = render :partial => 'layouts/breadcrumb'
+      %div{:data => {"yield" => "main"}}= yield
