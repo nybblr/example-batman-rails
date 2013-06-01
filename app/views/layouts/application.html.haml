@@ -11,7 +11,31 @@
     = csrf_meta_tags
 
   %body.app
-    = render :partial => 'layouts/sidebar'
+    -# = render :partial => 'layouts/sidebar'
     %article
-      = render :partial => 'layouts/breadcrumb'
-      %div{:data => {"yield" => "main"}}= yield
+      -# = render :partial => 'layouts/breadcrumb'
+      / Header and Nav
+      .row
+        .large-3.columns
+          %h1
+            %img{:src => "http://placehold.it/400x100&text=Logo"}/
+        .large-9.columns
+          %ul.inline-list.right
+            %li
+              %a{:href => "#"} Section 1
+            %li
+              %a{:href => "#"} Section 2
+            %li
+              %a{:href => "#"} Section 3
+            %li
+              %a{:href => "#"} Section 4
+      / End Header and Nav
+      .row
+        / Main Content Section
+        .large-9.push-3.columns
+          %h3
+            Page Title
+            %small Page subtitle
+            %div{:data => {"yield" => "main"}}= yield
+        = render 'layouts/sidebar'
+      = render 'layouts/footer'

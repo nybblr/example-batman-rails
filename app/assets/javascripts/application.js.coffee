@@ -13,6 +13,8 @@
 #= require jquery
 #= require jquery_ujs
 #
+#= require foundation
+#
 #= require ./lib/es5-shim
 #= require ./lib/batman
 #= require ./lib/batman.jquery
