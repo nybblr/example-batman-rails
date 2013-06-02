@@ -1,5 +1,6 @@
 %h1 New post
 
-= render 'batman/templates/posts/form'
+%form{data: {"formfor-post" => "post", "event-submit" => "controllers.posts.create"}}
+  = render 'batman/templates/posts/form'
 
-%a{data: {route: "routes.posts"}}
+%a{data: {route: "routes.posts"}} Cancel

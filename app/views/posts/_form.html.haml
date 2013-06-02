@@ -13,6 +13,16 @@
 -#   = f.input :published_on
 -#   = f.submit
 
-%form{data: {"formfor-post" => "post", "event-submit" => "controllers.posts.create"}}
-  %input.title{placeholder: "Post title", data: {bind: "post.body"}}
-  %input{type: "submit", value: "Save Post"}
+%div.input.string
+  %input.string{type: "text", placeholder: "Post title", data: {bind: "post.title"}}
+%div.input.string
+  %input.string{type: "text", placeholder: "Post body", data: {bind: "post.body"}}
+%div.input.string
+  %input.string{type: "text", placeholder: "Tags", data: {bind: "post.tags"}}
+%div.input.boolean
+  %label Published?
+  %input.boolean{type: "checkbox", data: {bind: "post.published"}}
+%div.input.datetime
+  %input.datetime{type: "date", placeholder: "Published on", data: {bind: "post.publishedOn"}}
+%div.input
+  %input.button{type: "submit", value: "Save Post"}

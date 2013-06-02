@@ -32,10 +32,10 @@
       / End Header and Nav
       .row
         / Main Content Section
-        .large-9.push-3.columns
+        .large-12.columns
           %h3
             Page Title
             %small Page subtitle
             %div{:data => {"yield" => "main"}}= yield
-        = render 'layouts/sidebar'
+        -# = render 'layouts/sidebar'
       = render 'layouts/footer'

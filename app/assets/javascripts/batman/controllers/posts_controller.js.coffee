@@ -24,3 +24,13 @@ class Awesome.PostsController extends Batman.Controller
         throw err unless err instanceof Batman.ErrorsSet
       else
         @redirect '/posts'
+
+  edit: (params) ->
+    @set 'post', Awesome.Post.find parseInt(params.id, 10), (err) ->
+
+  update: (params) ->
+    @get('post').save (err) =>
+      if err
+        throw err unless err instanceof Batman.ErrorsSet
+      else
+        @redirect '/posts'

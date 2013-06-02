@@ -1,7 +1,6 @@
-%h1 Editing post
+%h1 Edit post
 
-= render 'form'
+%form{data: {"formfor-post" => "post", "event-submit" => "controllers.posts.update"}}
+  = render 'batman/templates/posts/form'
 
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+%a{data: {route: "routes.posts"}} Cancel
