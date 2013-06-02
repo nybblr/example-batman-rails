@@ -34,3 +34,10 @@ class Awesome.PostsController extends Batman.Controller
         throw err unless err instanceof Batman.ErrorsSet
       else
         @redirect '/posts'
+
+  destroy: (node, callback, context) ->
+    context.get('post').destroy (err) =>
+      if err
+        throw err unless err instanceof Batman.ErrorsSet
+      else
+        @redirect '/posts'

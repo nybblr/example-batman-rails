@@ -7,9 +7,7 @@
     %th Tags
     %th Published
     %th Published on
-    %th
-    %th
-    %th
+    %th{colspan: 3} Actions
 
   %tbody
     %tr{data: {"foreach-post" => "posts"}}
@@ -19,8 +17,12 @@
       %td{data: {bind: "post.tags"}}
       %td{data: {bind: "post.published"}}
       %td{data: {bind: "post.publishedOn"}}
-      %td{data: {route: "routes.posts[post]"}} Show
-      %td{data: {route: "routes.posts[post].edit"}} Edit
+      %td
+        %a{data: {route: "routes.posts[post]"}} Show
+      %td
+        %a{data: {route: "routes.posts[post].edit"}} Edit
+      %td
+        %a{data: {"event-click" => "destroy"}} Destroy
 
 %br
 
