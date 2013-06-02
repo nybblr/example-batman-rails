@@ -5,6 +5,8 @@ class Awesome.PostsController extends Batman.Controller
   index: (params) ->
     # Set in controller context with =>
     Awesome.Post.load (err, results) =>
+      throw err if err
+
       # Returns a Batman.Set
       @set 'posts', results
 
@@ -12,3 +14,13 @@ class Awesome.PostsController extends Batman.Controller
     # Returns an IOU object that'll be loaded later
     @set 'post', Awesome.Post.find parseInt(params.id, 10), (err) ->
       throw err if err
+
+  new: (params) ->
+    @set 'post', new Awesome.Post
+
+  create: (params) ->
+    @get('post').save (err) =>
+      if err
+        throw err unless err instanceof Batman.ErrorsSet
+      else
+        @redirect '/posts'

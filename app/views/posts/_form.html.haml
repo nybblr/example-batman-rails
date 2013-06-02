@@ -1,14 +1,18 @@
-= simple_form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      %ul
-        - @post.errors.full_messages.each do |msg|
-          %li= msg
+-# = simple_form_for @post do |f|
+-#   - if @post.errors.any?
+-#     #error_explanation
+-#       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+-#       %ul
+-#         - @post.errors.full_messages.each do |msg|
+-#           %li= msg
+-# 
+-#   = f.input :title
+-#   = f.input :body
+-#   = f.input :tags
+-#   = f.input :published
+-#   = f.input :published_on
+-#   = f.submit
 
-  = f.input :title
-  = f.input :body
-  = f.input :tags
-  = f.input :published
-  = f.input :published_on
-  = f.submit
+%form{data: {"formfor-post" => "post", "event-submit" => "controllers.posts.create"}}
+  %input.title{placeholder: "Post title", data: {bind: "post.body"}}
+  %input{type: "submit", value: "Save Post"}

@@ -13,11 +13,12 @@
 
   %tbody
     %tr{data: {"foreach-post" => "posts"}}
-      %td{:data => {bind: "post.title"}}
-      %td{:data => {bind: "post.body"}}
-      %td{:data => {bind: "post.tags"}}
-      %td{:data => {bind: "post.published"}}
-      %td{:data => {bind: "post.published_on"}}
+      %td
+        %a{data: {bind: "post.title", route: "routes.posts[post]"}}
+      %td{data: {bind: "post.body"}}
+      %td{data: {bind: "post.tags"}}
+      %td{data: {bind: "post.published"}}
+      %td{data: {bind: "post.publishedOn"}}
       %td
       %td
       %td

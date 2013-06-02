@@ -19,3 +19,5 @@ window.Awesome = class Awesome extends Batman.App
 
   @on 'ready', ->
     Batman.developer.log "Awesome, we're ready."
+
+    # Anything DOM related, go for it!
