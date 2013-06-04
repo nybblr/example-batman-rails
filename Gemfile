@@ -43,6 +43,7 @@ gem 'haml_assets' # Allow HAML templates in pipeline
 # Daemons
 gem 'foreman' # daemon management
 # gem 'faye' # WebSocket server
+gem 'pry-rails'
 
 # Renderers
 gem 'haml'

@@ -7,4 +7,5 @@ class Awesome.Post extends Batman.Model
   @persist Batman.RailsStorage
 
   # Define attributes
-  @encode 'title', 'body', 'tags', 'published', 'publishedOn'
+  @encode 'title', 'body', 'tags', 'published'
+  @encode 'publishedOn', Batman.Encoders.railsDate
