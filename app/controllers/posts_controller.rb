@@ -80,6 +80,33 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :tags, :published, :published_on)
+      underscoreHash(params.require(:post).permit(:title, :body, :tags, :published, :publishedOn).to_hash)
     end
+
+    def underscoreHash(hash)
+      transform = lambda do |h|
+        if Hash === h
+          Hash[
+            h.map do |k, v|
+              [
+                case k
+                when String
+                  k.underscore
+                when Symbol
+                  k.to_s.underscore.to_sym
+                else
+                  k
+                end,
+                transform[v]
+              ]
+            end
+          ]
+        else
+          h
+        end
+      end
+
+      transform[hash]
+    end
+
 end
