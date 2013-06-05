@@ -1,19 +1,15 @@
-%p
-  %b Title:
-  %em{data: {bind: 'post.title'}}
+%h1{data: {bind: 'post.title'}}
+%h4
+  Published on
+  %em{data: {bind: 'post.publishedOn'}}
+
+-# %p{contenteditable: true, data: {bind: 'post.body'}}
+%p{data: {view: 'EditableView', 'view-data' => 'post.body', 'view-record' => 'post'}}
+
+%p{data: {bind: 'post.body'}}
 
 %p
-  %b Body:
-  %em{data: {bind: 'post.body'}}
-%p
-  %b Tags:
   %em{data: {bind: 'post.tags'}}
-%p
-  %b Published:
-  %em{data: {bind: 'post.published'}}
-%p
-  %b Published on:
-  %em{data: {bind: 'post.publishedOn'}}
 
 %a{data: {route: 'routes.posts[post].edit'}} Edit
 %a{data: {route: 'routes.posts'}} Back
