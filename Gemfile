@@ -59,6 +59,7 @@ gem 'haml-rails', :group => :development
 # Prettiness
 gem 'normalize-rails'
 gem 'zurb-foundation'
+gem 'underscore-rails' # JS helpers like Ruby
 gem 'simple_form'
 
 

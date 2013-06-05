@@ -14,11 +14,13 @@
 #= require jquery_ujs
 #
 #= require foundation
+#= require underscore
 #
 #= require ./lib/es5-shim
 #= require ./lib/batman
 #= require ./lib/batman.jquery
 #= require ./lib/batman.rails
+#
 #= require ./lib/robin
 #= require ./lib/reactor
 #

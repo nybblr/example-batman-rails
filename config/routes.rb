@@ -1,10 +1,12 @@
 Awesome::Application.routes.draw do
   resources :posts
 
-  faye_server '/faye', :timeout => 25, :engine  => { :type => Faye::Redis, :host => 'localhost', :port => 6379 } do
-    map '/posts/**' => PostsRealtime
-    map :default => :block
-  end
+  PostsRealtime
+  # faye_server '/faye', :timeout => 25, :engine  => { :type => Faye::Redis, :host => 'localhost', :port => 6379 } do
+  # faye_server '/faye', :timeout => 25 do
+  #   map '/posts/**' => PostsRealtime
+  #   # map :default => :block
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
