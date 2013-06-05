@@ -12,8 +12,12 @@ class Awesome.PostsController extends Batman.Controller
 
   show: (params) ->
     # Returns an IOU object that'll be loaded later
-    @set 'post', Awesome.Post.find parseInt(params.id, 10), (err) ->
-      throw err if err
+    # Don't use it if you plan to bind to it!
+    Awesome.Post.find parseInt(params.id, 10), (err, record) =>
+      if err
+        throw err
+      else
+        @set 'post', record
 
   new: (params) ->
     @set 'post', new Awesome.Post
@@ -26,7 +30,11 @@ class Awesome.PostsController extends Batman.Controller
         @redirect '/posts'
 
   edit: (params) ->
-    @set 'post', Awesome.Post.find parseInt(params.id, 10), (err) ->
+    Awesome.Post.find parseInt(params.id, 10), (err, record) =>
+      if err
+        throw err
+      else
+        @set 'post', record
 
   update: (params) ->
     @get('post').save (err) =>
