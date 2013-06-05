@@ -9,3 +9,6 @@ class Awesome.Post extends Batman.Model
   # Define attributes
   @encode 'title', 'body', 'tags', 'published'
   @encode 'publishedOn', Batman.Encoders.railsDate
+
+  # Load Robin
+  @set 'robin', new Batman.Robin(@)

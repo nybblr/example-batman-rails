@@ -41,8 +41,15 @@ gem 'haml_assets' # Allow HAML templates in pipeline
 # gem 'thin'
 
 # Daemons
+gem 'rails-observers' # cheezy callbacks like Rails 3
 gem 'foreman' # daemon management
-# gem 'faye' # WebSocket server
+gem 'faye-redis'
+gem 'faye-rails', :git => 'git://github.com/nybblr/faye-rails'
+gem 'thin'
+gem 'faye' # WebSocket server
+
+# Development
+gem 'quiet_assets'
 gem 'pry-rails'
 
 # Renderers
@@ -53,6 +60,7 @@ gem 'haml-rails', :group => :development
 gem 'normalize-rails'
 gem 'zurb-foundation'
 gem 'simple_form'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

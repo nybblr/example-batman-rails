@@ -19,6 +19,8 @@
 #= require ./lib/batman
 #= require ./lib/batman.jquery
 #= require ./lib/batman.rails
+#= require ./lib/robin
+#= require ./lib/reactor
 #
 #= require ./batman/app
 #

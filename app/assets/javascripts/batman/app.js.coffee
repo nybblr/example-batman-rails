@@ -16,6 +16,15 @@ window.Awesome = class Awesome extends Batman.App
 
     # Initialize sockets, connections, etc.
     # Anything not DOM related
+    #
+    # Open Faye socket for push
+    Batman.developer.log "Opening socket..."
+    @socket = new Faye.Client $('meta[name="faye-url"]').attr('content')
+
+    # Notify Robin that it can subscribe
+    Batman.Robin.fire('socket:ready')
+
+    Batman.developer.log "Running..."
 
   @on 'ready', ->
     Batman.developer.log "Awesome, we're ready."
