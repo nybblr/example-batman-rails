@@ -5,10 +5,13 @@ class Awesome.PostsController extends Batman.Controller
   index: (params) ->
     # Set in controller context with =>
     Awesome.Post.load (err, results) =>
+      # `results` is an IOU and won't
+      # be updated when records
+      # are added or deleted
       throw err if err
 
       # Returns a Batman.Set
-      @set 'posts', results
+      @set 'posts', Awesome.Post.get('loaded')
 
   show: (params) ->
     # Returns an IOU object that'll be loaded later
