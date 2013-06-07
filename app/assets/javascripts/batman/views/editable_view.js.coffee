@@ -31,7 +31,7 @@ class Awesome.EditableView extends Batman.View
       self.data 'before', self.html()
       @prop.setValue(self.html())
       return self
-    .on 'blur keyup keydown paste', (event) =>
+    .on 'blur keyup keydown paste hallomodified', (event) =>
       self = $(event.target)
       if self.data('before') isnt self.html()
         self.data 'before', self.html()
@@ -40,3 +40,7 @@ class Awesome.EditableView extends Batman.View
       return self
     .on 'blur', (event) =>
       @get('record').save()
+    .hallo
+      plugins:
+        "halloformat": {}
+        "hallolists": {}

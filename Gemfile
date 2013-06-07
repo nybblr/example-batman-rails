@@ -60,6 +60,9 @@ gem 'haml-rails', :group => :development
 gem 'normalize-rails'
 gem 'zurb-foundation'
 gem 'underscore-rails' # JS helpers like Ruby
+gem 'jquery-ui-rails'
+gem 'rangy-rails'
+gem 'font-awesome-rails'
 gem 'simple_form'
 
 

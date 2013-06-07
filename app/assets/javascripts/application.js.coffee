@@ -12,9 +12,20 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require jquery.ui.all
 #
 #= require foundation
 #= require underscore
+#
+#= require rangy-core
+#= require rangy-cssclassapplier
+#= require rangy-highlighter
+#= require rangy-position
+#= require rangy-selectionsaverestore
+#= require rangy-serializer
+#= require rangy-textrange
+#
+#= require ./lib/hallo
 #
 #= require ./lib/es5-shim
 #= require ./lib/batman
