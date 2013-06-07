@@ -1,7 +1,10 @@
 Awesome::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
-  PostsRealtime
+  # Preload
+  [PostsRealtime, CommentsRealtime]
   # faye_server '/faye', :timeout => 25, :engine  => { :type => Faye::Redis, :host => 'localhost', :port => 6379 } do
   # faye_server '/faye', :timeout => 25 do
   #   map '/posts/**' => PostsRealtime

@@ -1,15 +1,18 @@
-%h1{data: {bind: 'post.title'}}
-%h4
-  Published on
-  %em{data: {bind: 'post.publishedOn'}}
+.large-9.columns
+  %h1{data: {bind: 'post.title'}}
+  %h4
+    Published on
+    %em{data: {bind: 'post.publishedOn'}}
 
--# %p{contenteditable: true, data: {bind: 'post.body'}}
-%p{data: {view: 'EditableView', 'view-data' => 'post.body', 'view-record' => 'post'}}
+  -# %p{contenteditable: true, data: {bind: 'post.body'}}
+  %p{data: {view: 'EditableView', 'view-data' => 'post.body', 'view-record' => 'post'}}
 
-%p{data: {bind: 'post.body'}}
+  %p{data: {bind: 'post.body'}}
 
-%p
-  %em{data: {bind: 'post.tags'}}
+  %p
+    %em{data: {bind: 'post.tags'}}
 
-%a{data: {route: 'routes.posts[post].edit'}} Edit
-%a{data: {route: 'routes.posts'}} Back
+  %a{data: {route: 'routes.posts[post].edit'}} Edit
+  %a{data: {route: 'routes.posts'}} Back
+.large-3.columns
+  .comments{data: {"foreach-comment" => "post.comments", "partial" => "comments/_comment"}}

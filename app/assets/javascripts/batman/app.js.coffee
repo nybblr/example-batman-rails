@@ -7,7 +7,8 @@ window.Awesome = class Awesome extends Batman.App
   Batman.DOM.Yield.clearAllStale = -> {}
 
   # Define routes
-  @resources 'posts'
+  @resources 'posts', ->
+    @resources 'comments'
 
   @root 'posts'
 
