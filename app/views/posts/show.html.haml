@@ -1,21 +1,25 @@
-.large-9.columns
-  %h1{data: {bind: 'post.title'}}
-  %h4
-    Published on
-    %em{data: {bind: 'post.publishedOn'}}
+.row
+  .large-9.columns
+    %h1{data: {bind: 'post.title'}}
+    %h4
+      Published on
+      %em{data: {bind: 'post.publishedOn'}}
+    .large-6.columns
+      .row
+        %p{data: {bind: 'post.body'}}
 
-  -# %p{contenteditable: true, data: {bind: 'post.body'}}
-  %p{data: {view: 'EditableView', 'view-data' => 'post.body', 'view-record' => 'post'}}
+        %p
+          %em{data: {bind: 'post.tags'}}
+    .large-6.columns
+      .row
+        -# %p{contenteditable: true, data: {bind: 'post.body'}}
+        %p{data: {view: 'EditableView', 'view-data' => 'post.body', 'view-record' => 'post'}}
 
-  %p{data: {bind: 'post.body'}}
+    %a{data: {route: 'routes.posts[post].edit'}} Edit
+    %a{data: {route: 'routes.posts'}} Back
 
-  %p
-    %em{data: {bind: 'post.tags'}}
-
-  %a{data: {route: 'routes.posts[post].edit'}} Edit
-  %a{data: {route: 'routes.posts'}} Back
-.large-3.columns
-  .comment{data: {"foreach-comment" => "post.comments", partial: "comments/_comment"}}
-    .comment{data: {partial: "comments/_comment"}}
-  %form.row{data: {"formfor-comment" => "controllers.comments.comment", "event-submit" => "controllers.comments.create"}}
-    #new-comment{data: {partial: "comments/_form"}}
+  .large-3.columns
+    .comment{data: {"foreach-comment" => "post.comments", partial: "comments/_comment"}}
+      .comment{data: {partial: "comments/_comment"}}
+    %form.row{data: {"formfor-comment" => "controllers.comments.comment", "event-submit" => "controllers.comments.create"}}
+      #new-comment{data: {partial: "comments/_form"}}
