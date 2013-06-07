@@ -15,4 +15,7 @@
   %a{data: {route: 'routes.posts[post].edit'}} Edit
   %a{data: {route: 'routes.posts'}} Back
 .large-3.columns
-  .comments{data: {"foreach-comment" => "post.comments", "partial" => "comments/_comment"}}
+  .comment{data: {"foreach-comment" => "post.comments", partial: "comments/_comment"}}
+    .comment{data: {partial: "comments/_comment"}}
+  %form.row{data: {"formfor-comment" => "controllers.comments.comment", "event-submit" => "controllers.comments.create"}}
+    #new-comment{data: {partial: "comments/_form"}}

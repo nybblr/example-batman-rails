@@ -14,6 +14,8 @@ class Awesome.PostsController extends Batman.Controller
       @set 'posts', Awesome.Post.get('loaded')
 
   show: (params) ->
+    Awesome.set 'controllers.comments.comment',
+      new Awesome.Comment(post_id: params.id)
     # Returns an IOU object that'll be loaded later
     # Don't use it if you plan to bind to it!
     Awesome.Post.find parseInt(params.id, 10), (err, record) =>

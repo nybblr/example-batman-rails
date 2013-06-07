@@ -7,7 +7,7 @@ class Awesome.Post extends Batman.Model
   @persist Batman.RailsStorage
 
   # Define associations
-  @hasMany 'comments'
+  @hasMany 'comments', { inverseOf: 'post', saveInline: false }
 
   # Define attributes
   @encode 'title', 'body', 'tags', 'published'
