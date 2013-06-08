@@ -36,6 +36,6 @@
           %h3
             Page Title
             %small Page subtitle
-            %div{:data => {"yield" => "main"}}= yield
+            %div#main{:data => {"yield" => "main"}}= yield
         -# = render 'layouts/sidebar'
       = render 'layouts/footer'

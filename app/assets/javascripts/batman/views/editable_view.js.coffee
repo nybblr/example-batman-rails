@@ -23,7 +23,10 @@ class Awesome.EditableView extends Batman.View
 
     if @prop
       @prop.observeAndFire (newValue, oldValue) =>
-        @node.html(@prop.getValue())
+        value = @prop.getValue()
+        html  = @node.html()
+        if value isnt html
+          @node.html(value)
 
     @node
     .focus (event) =>
@@ -36,6 +39,7 @@ class Awesome.EditableView extends Batman.View
       if self.data('before') isnt self.html()
         self.data 'before', self.html()
         @prop.setValue(self.html())
+        $('textarea').trigger 'autosize'
         self.trigger('change')
       return self
     .on 'blur', (event) =>

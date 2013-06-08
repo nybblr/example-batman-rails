@@ -25,6 +25,7 @@
 #= require rangy-serializer
 #= require rangy-textrange
 #
+#= require ./lib/jquery.autosize
 #= require ./lib/hallo
 #
 #= require ./lib/es5-shim
@@ -47,3 +48,8 @@
 # Run the Batman app
 $ ->
   Awesome.run()
+
+# JS niceness
+$ ->
+  $('#main').on 'mouseover', 'textarea', ->
+    $(this).autosize()
